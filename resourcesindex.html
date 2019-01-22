@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 37.5px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="designWidth=750,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title></title>
+<link href="/Public/home/css/swiper.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/style.min.css">
+<link rel="stylesheet" type="text/css" href="/Public/layer/mobile/need/layer.css">
+<script src="/Public/home/js/jquery-1.7.min.js"></script>
+<script src="/Public/home/js/swiper.min.js"></script>
+<script src="/Public/home/js/mui.min.js"></script>
+<script src="/Public/layer/mobile/layer.js"></script>
+<script src="/Public/home/js/jquery.cookie.js"></script>
+</head>
+<body style="font-size: 12px;" class="mui-ios mui-ios-11 mui-ios-11-0">
+<style>
+.erweima{
+    text-align: center;
+    padding:25px 0;
+    background: white;
+}
+.erweima img{
+    margin:0 auto;
+    width:200px;
+    height:200px;
+}
+.erweima p{
+    font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 5px;		
+	color: #8f8f94;
+}
+.books-col .item{border-bottom: 1px solid #f2f2f2;border-top:.2667rem;}
+.books-col .item a{display: block;position: relative; overflow: hidden;}
+.books-col .item a img{width: 100%;height: 260px;display: block;background-image: url(../images/default.jpg);background-repeat: no-repeat;background-size: 100%;border-bottom: 1px solid #eee;}
+.books-col .item a .title{height: 24px;font-size: 0.45rem;display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.books-col .item a .author{font-size: 0.3rem;color: #666;display: block;line-height: 24px;}
+.books-col .item a .btn{position: absolute;right: 15px;top: 8px;font-size: 0.38rem;width: 80px;height: 0.9rem;line-height: 0.9rem; text-align: center;border: 1px solid #fc992f;border-radius: 5px;color: #ff890b;}
+.books-col .item a p{font-size: 0.4rem;color: #999;line-height: 20px;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;margin-top: .2rem;}
+.books-col .item .title i{float: right;font-size: .35rem;color: #5d5757;font-style: normal;margin: .1rem .3rem;}
+</style>
+<div class="navbar flt">
+	<nav class="tab-box">
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=index" class="active">漫画</a>
+	</div>
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=novel">小说</a>
+	</div>
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=video">视频</a>
+	</div>
+	</nav>
+	<div class="action">
+		<a href="/index.php?m=&c=Index&a=iSearch" class="btn">
+		<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48"><path d="M35.94 35.94l7.71 7.71" fill="none" stroke="#fff" stroke-width="3"></path><circle cx="23.3" cy="23.3" r="18.5" fill="none" stroke="#fff" stroke-width="3"></circle><path d="M11.72 23.15A12 12 0 0 1 24.5 12" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"></path></svg>
+		</a>
+	</div>
+</div>
+<div id="banner-container">
+	<div class="portal-slick mt-navbar slick-initialized slick-slider">
+		<div aria-live="polite" class="slick-list draggable" tabindex="0">
+			<div class="swiper-container swiper-container-horizontal swiper-container-ios swiper-container-wp8-horizontal">
+				<div class="swiper-wrapper">
+									</div>
+				<div class="swiper-pagination swiper-pagination-bullets swiper-pagination-bullets-dynamic" ></div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="portal-nav">
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=novel">
+		<i style="background-image: url(&#39;http://cgnovel.oss-cn-shanghai.aliyuncs.com/Image/46b16c5391eb438f8eaf7b4ac18c15ca.png&#39;)"></i>
+		<div class="title">
+			小说
+		</div>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=rank&btype=1">
+		<i style="background-image: url(&#39;http://cgnovel.oss-cn-shanghai.aliyuncs.com/Image/127836b975164ed99ae0b358d6abfa92.png&#39;)"></i>
+		<div class="title">
+			排行榜
+		</div>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=moreList&field=isfw&value=2&btype=1">
+		<i style="background-image: url(&#39;http://cgnovel.oss-cn-shanghai.aliyuncs.com/Image/20a0a9e9bb8440529b0a01a256c0370b.png&#39;)"></i>
+		<div class="title">
+			免费
+		</div>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/index.php?m=&c=Index&a=bookType&btype=1">
+			<i style="background-image: url(&#39;http://cgnovel.oss-cn-shanghai.aliyuncs.com/Image/2bbe2fa5331c4dc0ba8e851397979e23.png&#39;)"></i>
+			<div class="title">
+			分类
+		</div>
+		</a>
+	</div>
+</nav>
+
+
+<style>
+	
+</style>
+
+
+
+<script>
+	$(function () {
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+        });
+    });
+</script>
+<div class="backtop" id="icon-top" style="display:none">
+	<a href="javascript:window.scrollTo('0','0');" class="top">顶部</a>
+</div>
+<div class="bm-box" style="margin-bottom:50px"></div>
+<div class="tabar flb" id="myfooter">
+	<nav class="nav hls1">
+		<div class="item">
+			<a href="/index.php?m=&c=Index&a=collectHistory" class="">
+				<i class="icon-book"></i>
+				<div class="title">
+					书架
+				</div>
+			</a>
+		</div>
+		<div class="item">
+			<a href="/index.php?m=&c=Index&a=novel" class="active">
+				<i class="icon-home"></i>
+				<div class="title">
+					首页
+				</div>
+			</a>
+		</div>
+		<div class="item">
+			<a href="/index.php?m=&c=Index&a=my" class="">
+				<i class="icon-user"></i>
+				<div class="title">
+					我的
+				</div>
+			</a>
+		</div>
+	</nav>
+</div>
+
+<script>
+	$(window).scroll(function(){
+		if($(window).scrollTop()>500){
+			$("#icon-top").show();
+			
+		}else{
+			$("#icon-top").hide();
+		}
+	});
+
+	$('#myfooter .item').click(function(){
+		var index = $(this).index();
+		$.cookie('index',index);
+	});
+	
+	$(function(){
+		if($.cookie('index')){
+			$('#myfooter .item').find('a').removeClass("active");
+		}
+		$('#myfooter .item').each(function(){
+			var index = $(this).index();
+			if(index == $.cookie('index')){
+				$(this).find('a').addClass('active');
+			}
+		})
+	})
+	
+	function bh_msg_tips(msg) {
+		var oMask = document.createElement("div");
+		oMask.id = "bh_msg_lay";
+		oMask.style.position = "fixed";
+		oMask.style.left = "0";
+		oMask.style.top = "50%";
+		oMask.style.zIndex = "100";
+		oMask.style.textAlign = "center";
+		oMask.style.width = "100%";
+		oMask.innerHTML = "<span style='background: rgba(0, 0, 0, 0.65);color: #fff;padding: 10px 15px;border-radius: 3px; font-size: 14px;'>" + msg
+			+ "</span>"; document.body.appendChild(oMask);
+		setTimeout(function () {
+			$("#bh_msg_lay").remove();
+		}, 2000);
+	}
+</script>
+</body>
+</html>
