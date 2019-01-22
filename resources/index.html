@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 37.5px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="designWidth=750,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>超级唐僧闯西游</title>
+<link href="/Public/home/css/swiper.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/style.min.css">
+<link rel="stylesheet" type="text/css" href="/Public/layer/mobile/need/layer.css">
+<script src="/Public/home/js/jquery-1.7.min.js"></script>
+<script src="/Public/home/js/swiper.min.js"></script>
+<script src="/Public/home/js/mui.min.js"></script>
+<script src="/Public/layer/mobile/layer.js"></script>
+<script src="/Public/home/js/jquery.cookie.js"></script>
+</head>
+<body style="font-size: 12px;" class="mui-ios mui-ios-11 mui-ios-11-0">
+
+
+<style>
+	body{background:#ded0b3}
+    img {
+        max-width: 100%;
+        font-size: inherit;
+        line-height: 32px;
+        text-indent: 2em;
+        font-family: 微软雅黑;
+        display: block;
+        /*小说和漫画是不同的*/
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+    }
+    .novel p {
+        text-indent:2em;padding-top:4px;padding-bottom:4px;font-size:17px;line-height:32px;  
+    }
+	.m-box p{line-height:30px;}
+	.cols{width:100%;height:1.333rem;background:#eee;}
+	.cols ul{width: 90%;margin: 0 auto;height: 100%;display: -webkit-box;}
+	.cols ul li{height:100%;-webkit-box-flex:1;}
+	.cols ul li span{width: .6rem;height: .6rem;border-radius: 50%;display: block;margin: .3665rem auto;background: red;border:1px solid #dcd4d4;text-align:center;line-height:.6rem}
+	.cols ul li div{width:.6rem;height:.6rem;text-align:center;line-height:.6rem;margin:.3665rem auto;font-size:.5rem;font-weight:600}
+	.cols ul li .color1{background-color:#fff;}
+	.cols ul li .color2{background-color:#b6b2ca;}
+	.cols ul li .color3{background-color:#ded0b3;}
+	.cols ul li .color4{background-color:#c1cac1;}
+	.cols ul li .color5{background-color:#bf7cbf;}
+	.cols ul li .color6{background-color:#4CAF50;}
+	.cols ul li .color7{background-color:#2E2F2D;}
+</style>
+<div class="rt-bar" style="position: fixed;">
+	<div class="row">
+		<div class="col icon">
+			<a href="javascript:history.go(-1);">
+				<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 40 40"><path d="M29.56 39.47a2 2 0 0 1-1.38-.56L8.45 20 28.17 1.09A2 2 0 1 1 30.94 4L14.23 20l16.71 16a2 2 0 0 1-1.38 3.44z" fill="#ff730a"></path></svg>
+			</a>
+		</div>
+		<div class="col title">
+			第101章 沙僧来了，然后——		</div>
+		<div class="col link">
+			<a href="/index.php?m=&c=Index&a=info&id=366&isCks=1">全集</a>
+		</div>
+	</div>
+	<div class="cols">
+			<ul>
+				<li><span class="colors color1"></span></li>
+				<li><span class="colors color2"></span></li>
+				<li><span class="colors color3"></span></li>
+				<li><span class="colors color4"></span></li>
+				<li><span class="colors color5"></span></li>
+				<li><span class="colors color6"></span></li>
+				<li><span class="colors color7"></span></li>
+				<li><div class="colont">A+</div></li>
+				<li><div class="colont">A-</div></li>
+			</ul>
+		</div></div>
+<script>
+	var font = 1;
+		size = 0.45;
+		line = 30; 
+	$('.colors').click(function(){
+		var index = $(this).parent().index();
+		var color = $(this).css('background-color');
+		$('body').css('background-color',color);
+		$('body div').css('background-color',color);
+		if(index == 6){
+			$('body').css('color','#fff');
+			$.cookie('pcolor','#fff');
+		}else{
+			$('body').css('color','#333');
+			$.cookie('pcolor','#333');
+		}
+		$.cookie('bodycolor',color);
+		
+		//遮罩层
+		$('.mask-box').css("background-color","rgba(0,0,0,.6)");
+		$('.modal').css("background-color","rgba(0,0,0,0)");
+		$('.modal > div').css("background-color","#fff");
+		$('.modal > .inner').css("background-color","#fff");
+	});
+	
+	$(function(){
+		var bcolor = $.cookie('bodycolor');
+		var	pcolor = $.cookie('pcolor'); 
+		var	size = $.cookie('size');
+		var	line = $.cookie('line');
+		var btype = "";
+		if(btype == "2"){
+			if(bcolor){
+				$('body').css('background-color',bcolor);
+				$('body div').css('background-color',bcolor);
+				$('body').css('color',pcolor);
+				
+				//遮罩层
+				$('.mask-box').css("background-color","rgba(0,0,0,.6)");
+				$('.modal').css("background-color","rgba(0,0,0,0)");
+				$('.modal > .inner').css("background-color","#fff");
+			}else{
+				//初始化背景颜色
+				$('body').css('background-color',"#ded0b3");
+				$('body div').css('background-color',"#ded0b3");
+				$('body').css('color',"#333");
+				//遮罩层
+				$('.mask-box').css("background-color","rgba(0,0,0,.6)");
+				$('.modal').css("background-color","rgba(0,0,0,0)");
+				$('.modal > div').css("background-color","#fff");
+				$('.modal > .inner').css("background-color","#fff");
+				
+			}
+			if(size){
+				$('.m-box p').css('font-size',size+'rem');
+				$('.m-box p').css('line-height',line+'px');
+			}
+		}
+	})
+	
+	$('.colont').click(function(){
+		var index = $(this).parent().index();
+		if(index == 7){
+			font++;
+			if(font>4){
+				font = 4;
+			}else{
+				size += 0.05;
+				line += 5;
+			}
+		}else{
+			font--;
+			if(font < 1){
+				font = 1;
+			}else{
+				size = size - 0.05;
+				line = line - 5;
+			}
+		}
+		$('.m-box p').css('font-size',size+'rem');
+		$('.m-box p').css('line-height',line+'px');
+		$.cookie('line',line);
+		$.cookie('size',size);
+	})
+</script>
+<div class="m-box" style="font-size: .45rem;padding:2.8583rem 20px 0 20px;">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               “你这个傻猴子，竟然没能将人吸引过来，真是傻得可以，刚才那只有两个人，而且他们已经看到你了，你就应该说‘两位行行好，给点钱吧，给点吃的吧’，如果是三个，就叫‘三位行行好’，如果是很多人，就叫‘各位行行好’。”青年乞丐说道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “但是你说不能说错啊。”孙悟空疑惑。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “啪！”青年乞丐再次抽了孙悟空一下：“你还敢顶嘴，你这个傻猴子，让你这么说你就这么说，哪来那么多废话！”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    青年乞丐气恼的又抽了一竿子。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空被抽得眼皮直跳，心中不停地告诉自己，只要坚持三天，就能救紫兰了，自己一定能行的！</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    原本孙悟空以为，不就是做三天乞丐而已吗？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    没想到真正实践的时候，竟然那么难，好几次他差点功亏一篑！</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “继续，傻猴子！”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    青年乞丐再次抽了孙悟空一下，说道：“现在我就教你，如何做一个乞丐。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “做乞丐，就要放下自己的尊严，低三下四的去求那些有钱人的施舍。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “我能问一个问题吗？”孙悟空忽然打断。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “什么问题？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “你们有手有脚的，干嘛要放下自己的尊严来做乞丐？”孙悟空问道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “做乞丐多好，什么都不用做就能吃饭。”。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “那你现在不是正在做事情吗？难道所有乞丐都要这么费力的去乞讨？那跟正常人有什么区别？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “啪！”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    青年乞丐怒抽了一下孙悟空的脑袋：“哪来那么多问题？跪下！”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “为什么要跪下？我又没犯错。”孙悟空不解。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “让你跪下你就跪下，你还敢再顶嘴？”青年乞丐又是一竿子抽过来：“跪下来，是让你跪着乞讨，这样就会让那些路过的人觉得你可怜，然后说不定就会心软给你吃的，或者给你钱。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “还不快跪下！”青年乞丐喝道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空转过头去，微微闭上眼睛，再次告诉自己，只要坚持三天！！！</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “乞丐为了吃饭，放下尊严向别人乞讨，现在我为了救紫兰，不也算是放下尊严在这里向寒极天女乞讨吗？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空心中想到，他觉得寒极天女肯定已经知道他的到来了，甚至说不定这一切都是寒极天女安排的。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    否则他做了三天乞丐，寒极天女如何让他见？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “砰！”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空面无表情的跪下来，他努力给自己催眠：我不是给这些下等凡人下跪，而是给寒极天女下跪！为了紫兰！</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “大师兄，你在这里干什么？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    忽然一个熟悉的声音响起，孙悟空抬头看去，正好看到沙僧一闪就出现在他面前。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “做乞丐啊。”孙悟空理所当然的答道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “大师兄，你不是要去找寒极天女吗？怎么来这里做起乞丐了？”沙僧愕然。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “因为寒极天女要我做乞丐啊。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “为什么？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “因为寒极天女说我做三天乞丐后她就愿意见我。”孙悟空面无表情的道：“然后，她就会给我寒极天丹。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “这位大人，你看我们那么可怜，行行好吧，给点钱吧。”这时青年乞丐对沙僧说道，并且抽了一下孙悟空，示意孙悟空开始乞讨。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    青年乞丐虽然听到了孙悟空和沙僧的对话，但却并未反应过来怎么回事。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    沙僧顿时奇怪的看了一眼青年乞丐，他并未多想，因为青年看似很用力，但抽打在孙悟空身上，连挠痒痒都不算。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    沙僧真正奇怪的是，他崇拜的大师兄，竟然被这个一点修为都没有的凡人用身子拴着脖子，似乎还被逼迫乞讨？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    沙僧还以为自己眼睛花了，不过他并未忘记自己的任务：“大师兄，不用求寒极天丹了，紫兰已经被师父救下了。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    紫兰已经被师父救下了……</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    救下了……</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空以为自己听错了，吃惊的看着沙僧，就连青年乞丐再次抽了他一下他也没注意。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “傻猴子，跟你说话你没听到吗？快点给这位大人磕头。”青年乞丐喝道，并且再次一竿子打过来。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    这次孙悟空突然出手了，将竹竿抓住，惊喜的问沙僧：“老沙，你说的是真的？你没骗老孙？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “大师兄你放心，我老沙就算骗谁，都不会骗你。”沙僧说道：“师父可厉害了，现在师父的修为已经是金仙。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “师父救活了紫兰？师父已经是金仙了？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空又惊又喜，有些反应不过来，同时心中对师父的感激已经无法形容。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    这时青年乞丐用力抽竹竿，孙悟空突然放手，青年乞丐猛地往后倒下去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “傻猴子，你真是大逆不道，看我如何收拾你！”青年乞丐怒了，猛的爬起来，狠狠一竹竿往孙悟空后脑勺抽过去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    原本打不还手骂不还口的孙悟空，突然出手了。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    一拳就轰了过去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “啪啪啪……”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    拇指粗的竹竿寸寸断裂，而且孙悟空的拳头就像是折叠了空间，瞬间轰在青年乞丐身上。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “咻——”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    青年乞丐顿时化作流光一飞冲天，化作一粒光点消失不见。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空这才收回拳头，冷酷的说道：“真以为俺老孙不会还手吗？”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “咻……”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    这时头顶再次传来破空声，而后那青年乞丐“啊啊啊”的惨叫着往下落。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “嘭”的一声，将旁边的地面都砸出一个坑，然后一动不动了。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “大师兄，你杀了他？”沙僧疑惑，大师兄怎么会对一个凡人下杀手？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “杀了他？那太便宜他了。”孙悟空冷笑道：“俺老孙还是很善良的，只是将他的手打断，再将他的腿打断，然后再将他的脊椎打断，最后才将他的唧唧打断而已。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “哇，大师兄你好残忍，这样他不就成了残废了吗？”沙僧问道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “你要是知道他的理想是当一个真正的乞丐，就不会觉得老孙残忍了。”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “原来是这样啊，那大师兄你太善良了，你应该再将他的眼睛弄瞎一只，这样看起来才像真正的乞丐。”沙僧一本正经的说道。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    孙悟空站起来，轻松挣断脖子上的绳子，跟沙僧大步离开，只剩下青年乞丐的身体在那里不停地颤抖。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “大师兄，我们快回去吧，师父……”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    “等下，老孙我处理一点事情！”孙悟空一抹头顶的猴毛，冷酷的一笑，带着沙僧往一个方向走去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    不多时，他们来到一片区域，这里随处可见的乞丐，或是躺在地上，或是背靠墙壁翘着二郎腿，非常惬意。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<style>
+.go-home{
+	height: .7rem;
+    width: .7rem;
+    display: block;
+    margin: -.3rem auto;
+}
+</style>
+
+<div class="read-footer">
+	<div class="row">
+		<div class="col">
+			<a href="javascript:addMarker(366,2);" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" class="shelf ">
+			<i class="icon-fav"></i>收藏
+			</a>
+		</div>
+		<div class="col">
+			<!-- <a href="javascript:;" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" data-clipboard-action="copy" data-clipboard-text="&#10;" class="copy shelf ">
+				<i class="icon-share"></i>红包
+			</a> -->
+			<a href="/index.php?m=&c=Test&a=share&id=366" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+				<i class="icon-share"></i>分享赚红包
+			</a>
+		</div>
+		<div class="col">
+			<a href="/index.php?m=&c=Index&a=info&id=366&isCks=1" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+			<i class="icon-dir"></i>目录
+			</a>
+		</div>
+	</div>
+	<div class="control clearfix">
+		<div class="item prev">
+							<a href="javascript:nextChaps(366,1);"><i></i>上一话</a>		</div>
+				<div class="item next">
+			<a href="/index.php?m=&c=Index&a=novel">
+				<img class="go-home" src="/Public/home/images/svg/tabbar_home_n.svg">
+				<span style="margin-top: .25rem;display: block;">书城首页</span>
+			</a>
+		</div>		<div class="item next">
+			<a href="javascript:;" onclick="nextChaps(366,3);">下一话<i></i></a>
+		</div>
+	</div>
+</div>
+<div class="rb-bar chapter-menu" style="display: none;">
+	<div class="row">
+		<div class="col">
+							<a href="javascript:nextChaps(366,1);"><i></i>上一话</a>		</div>
+		<div class="col">
+			<a href="javascript:addMarker(366,2);" class="shelf "><i class="icon-fav"></i> 收藏</a>
+		</div>
+		<div class="col">
+			<a href="javascript:;" onclick="nextChaps(366,3)">下一话<i></i></a>
+		</div>
+	</div>
+</div>
+<div class="circle-box" style="display:none;">
+	<a onclick="howContinue()" class="portal">
+		<i class="icon-home"></i>
+		<span class="title">
+		追书
+		</span>
+	</a>
+	<a href="/index.php?m=&c=Index&a=lodge&anid=366" class="portal" style="margin-top: 5px; background-color: rgba(0,0,0,.0); background-image: url(./Public/home/images/svg/reading_icon_jubao@2x.png); background-position: center; background-repeat: no-repeat; background-size: 40px;"></a>
+	<a href="/index.php?m=&c=Index&a=share&id=366" class="portal" style="margin-top:5px;">
+		<i class="icon-share"></i>
+		<span class="title">
+		红包
+		</span>
+	</a>
+</div>
+
+<div class="mask-box delete-selected-confirm" style="display: none;"></div>
+<div class="modal confirm-modal delete-selected-confirm" style="display: none;">
+	<div class="inner">
+		<div class="confirm-box">
+			<div class="body">
+				<div class="title">
+					您的帐户余额不足，是否进行充值？
+				</div>
+			</div>
+			<div class="action">
+				<a href="javascript:void(0);" class="btn cancel" onclick="$('.mask-box').hide();$('.modal').hide();">取消</a>
+				<a href="javascript:void(0);" class="btn confirm" onclick="location.href=&#39;/index.php?m=&c=Index&a=charge&anid=366&#39;">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$(function(){
+		//初始化判断是否超过强制关注
+		var sub = "";
+		subscribe = "";
+		chaps = "2";
+		userid = "";
+		if(sub !="" && (subscribe == "0" || subscribe == "") && chaps>=sub && sub != "0"){
+			if(userid == ""){
+				location.href="/index.php?m=&c=Public&a=login&fr="+"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHA/bT1ob21lJmM9dGVzdCZhbmlkPTM2NiZjaGFwcz0y";
+				return;			
+			}
+			layer.open({
+				content: '<div style="text-align:center;">' +
+					'<div style="color:darkorange;font-size:14px;">长按识别下方二维码关注公众号继续观看！</div>' +
+					'<img width="100%" src="./Public/upload/images/1808/16/201533802596009643.jpg"/>' +
+					'<div style="font-size:14px;">长按识别上方二维码关注</div></div>',
+				one: function (index) {
+					layer.close(index);
+				}
+			});
+		}
+	})
+	
+	//下一话
+	function nextChaps(anid,chaps){
+		//判断是否有强制关注
+		var sub = "";
+			subscribe = "";
+			userid = "";
+		if(sub !="" && (subscribe == "0" || subscribe == "") && chaps>=sub && sub != "0"){
+			if(userid == ""){
+				location.href="/index.php?m=&c=Public&a=login&fr="+"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHA/bT1ob21lJmM9dGVzdCZhbmlkPTM2NiZjaGFwcz0y";
+				return;			
+			}
+			layer.open({
+				content: '<div style="text-align:center;">' +
+					'<div style="color:darkorange;font-size:14px;">长按识别下方二维码关注公众号继续观看！</div>' +
+					'<img width="100%" src="./Public/upload/images/1808/16/201533802596009643.jpg"/>' +
+					'<div style="font-size:14px;">长按识别上方二维码关注</div></div>',
+				one: function (index) {
+					layer.close(index);
+				}
+			});
+			return false;
+		}
+		
+		$.post("/index.php?m=&c=Ajax&a=nextChaps",{anid:anid,chaps:chaps},function(d){
+			if(d){
+				console.log(d);
+				if(d.status == 1){
+					$('.mask-box').show();
+					$('.modal').show();
+				}else if(d.status == 2){
+					location.href = d.url;
+				}else{
+					alert("异常错误！");
+				}
+			}else{
+				alert("请求失败！");
+			}
+		});
+	}
+
+
+	function howContinue() {
+        layer.open({
+            content: '<div style="text-align:center;"><p style="font-size:16px;">如何追书？</p>' +
+                '<div style="color:darkorange;font-size:14px;">关注作者授权公众号，方便下次阅读</div>' +
+                '<img width="100%" src="./Public/upload/images/1808/16/201533802596009643.jpg"/>' +
+                '<div style="font-size:14px;">长按识别上方二维码关注</div></div>',
+            btn: '明天再说啦',
+            one: function (index) {
+                layer.close(index);
+            }
+        });
+    }
+
+    
+    function addMarker(anid, chaps) {
+        var is_gray_ = $(".shelf").hasClass("active");
+        $.post("/index.php?m=&c=Ajax&a=collect",{id:"366"});
+        if (is_gray_) {
+            $(".shelf").removeClass("active");
+        }
+        else {
+            $(".shelf").addClass("active");
+        }
+    }
+    $(function () {
+        var winSTbefore = 0;//声明一个变量，用于装触发scroll事件的上一个scrollTop
+        function monitor() {
+            var winH = window.innerHeight;    //获取浏览器窗口高度，若要支持IE需要在此处做兼容
+            var winST = $(window).scrollTop();  //获取scrollTop
+            var docH = $(document).height();  //获取文档高度
+            var arr = [winH, winST, docH];
+            return arr;
+        }
+        monitor();
+        $(window).scroll(function () {
+            var arr = monitor();
+            var winH = arr[0];
+            var winST = arr[1];
+            var docH = arr[2];
+            if (winST <= winH / 10) {
+                $('.chapter-menu').hide(); //在首屏时隐藏
+                $('.rt-bar').removeClass('flt');
+                $('.rt-bar').css('position', 'absolute');
+            } else if (winST + winH >= docH) {
+                $('.chapter-menu').hide(); //到达底部时隐藏
+                $('.rt-bar').removeClass('flt');
+                $('.rt-bar').css('position', 'absolute');
+            } else if (winST > winSTbefore) {
+                $('.chapter-menu').hide();    //向下滑动时隐藏
+                $('.rt-bar').removeClass('flt');
+                $('.rt-bar').css('position', 'absolute');
+				$('.circle-box').hide();
+            } else if (winST < winSTbefore) {
+                $('.chapter-menu').show(); //向上滑动时显示
+                $('.rt-bar').addClass('flt');
+                $('.rt-bar').css('position', 'fixed');
+				$('.circle-box').show();
+            }
+            winSTbefore = winST;  //更新winSTbefore的值
+        });
+        $(document).click(function(){
+            var arr = monitor();
+            var winh = arr[0];
+            var winst = arr[1];
+            var doch = arr[2];
+            if (winst + winh >= doch) {
+                $('.chapter-menu').hide(); //到达底部时隐藏
+                $('.rt-bar').removeClass('flt');
+                $('.rt-bar').css('position', 'absolute');
+				$('.circle-box').show();
+            }
+            else{
+                $('.chapter-menu').show(); //向上滑动时显示
+                $('.rt-bar').addClass('flt');
+                $('.rt-bar').css('position', 'fixed');
+            }
+        })
+        $(document).on("tap",function(){
+            var arr = monitor();
+            var winh = arr[0];
+            var winst = arr[1];
+            var doch = arr[2];
+            if (winst + winh >= doch) {
+                $('.chapter-menu').hide(); //到达底部时隐藏
+                $('.rt-bar').removeClass('flt');
+                $('.rt-bar').css('position', 'absolute');
+				$('.circle-box').show();
+            }
+            else{
+                $('.chapter-menu').show(); //向上滑动时显示
+                $('.rt-bar').addClass('flt');
+                $('.rt-bar').css('position', 'fixed');
+				$('.circle-box').show();
+            }
+        });
+
+    });
+
+</script>
+<div class="backtop" id="icon-top" style="display:none">
+	<a href="javascript:void(0);" class="top">顶部</a>
+</div>
+<script>
+	window.shareData = {
+		img: "http://pfnlt6ll6.bkt.clouddn.com/d04a4846bcd4350e7a5602934a1b0152.png", 
+		link: "http://localhost/index.php?m=&c=Test&a=readAnime&anid=366&chaps=2",
+		title: "",
+		desc: "",
+	};	
+</script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+	wx.config({
+		debug: false,
+		appId: "wx0df6fca3de9a5154",
+		timestamp: 1538048717,
+		nonceStr: 'ry0jqihg3ccirp9s75sipqx14aqog027',
+		signature: '73a0f3f5c0a0094c2a3d9d4b320d7cad63abdec6',
+		jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
+	});
+	wx.ready(function () {
+		wx.checkJsApi({
+			jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+			success: function(res) {
+				//alert(JSON.stringify(res));
+			}
+		});
+		wx.error(function(res){
+			console.log('err:'+JSON.stringify(res));
+			// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+		});
+		//分享给朋友
+		wx.onMenuShareAppMessage({
+			title: window.shareData.title, // 分享标题
+			desc: window.shareData.desc, // 分享描述
+			link: window.shareData.link, // 分享链接
+			imgUrl: window.shareData.img, // 分享图标
+			type: 'link', // 分享类型,music、video或link，不填默认为link
+			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+			success: function () { 
+			},
+			cancel: function () { 
+				
+			}
+		});
+		//分享到朋友圈
+		wx.onMenuShareTimeline({
+			title: window.shareData.title, // 分享标题
+			link: window.shareData.link, // 分享链接
+			imgUrl: window.shareData.img, // 分享图标
+			success: function () { 
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function () { 
+				// 用户取消分享后执行的回调函数
+			}
+		});
+	});
+	</script>
+	</body>
+</html>
